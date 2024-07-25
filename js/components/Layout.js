@@ -3,26 +3,23 @@ export class Layout {
 
     header() {
         const HTML = '<header>HEADER</header>';
-        const DOM = document.getElementById('app');
-
-        DOM.insertAdjacentHTML('beforeend', HTML);
+        return HTML;
     }
 
     main() {
         const HTML = '<main>MAIN</main>';
-        const DOM = document.getElementById('app');
-
-        DOM.insertAdjacentHTML('beforeend', HTML);
+        return HTML;
     }
 
     footer() {
         const HTML = '<footer>FOOTER</footer>';
-        const DOM = document.getElementById('app');
-
-        DOM.insertAdjacentHTML('beforeend', HTML);
+        return HTML;
     }
 
     render() {
+        const DOM = document.getElementById('app');
+        const HTML = this.header() + this.main() + this.footer();
         
+        DOM.insertAdjacentHTML('beforeend', HTML);
     }
 }
