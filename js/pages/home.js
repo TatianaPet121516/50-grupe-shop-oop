@@ -1,8 +1,3 @@
-import { Layout  } from "../components/Layout.js";
-
-// const homePage = new Layout();
-// homePage.render();
+import { Layout } from "../components/Layout.js";
 
 new Layout();
-
-
