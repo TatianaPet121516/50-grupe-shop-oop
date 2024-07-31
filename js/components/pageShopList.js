@@ -10,9 +10,24 @@ export class PageShopList {
 
         for (const rowDOM of rowsDOM) {
             const buttonsDOM = rowDOM.querySelectorAll('button');
+ const amountDOM = rowDOM.querySelector('span');
 
-            buttonsDOM[2].addEventListener('click', () => {
-                console.log('deleting...');
+            buttonsDOM[1].addEventListener('click', () => {
+                const idToIncrement = rowDOM.id;
+                const localStorageData = localStorage.getItem('itemList');
+                const list = JSON.parse(localStorageData)
+                    .map(item => item.id === idToIncrement ? { ...item, amount: item.amount + 1 } : item);
+
+                localStorage.setItem('itemList', JSON.stringify(list));
+
+                amountDOM.textContent = list.filter(item => item.id === idToIncrement)[0].amount;
+            });
+             buttonsDOM[2].addEventListener('click', () => {
+                const idToRemove = rowDOM.id;
+                const localStorageData = localStorage.getItem('itemList');
+                const list = JSON.parse(localStorageData).filter(item => item.id !== idToRemove);
+                localStorage.setItem('itemList', JSON.stringify(list));
+                rowDOM.remove();
             });
         }
     }
@@ -24,11 +39,11 @@ export class PageShopList {
          if (data) {
             for (const item of data) {
                 HTML += `
-                    <tr>
+                    <tr id="${item.id}">
                         <td>${item.title}</td>
                         <td>
                             <button>-</button>
-                            ${item.amount}
+                            <span>${item.amount}</span>
                             <button>+</button>
                         </td>
                         <td>

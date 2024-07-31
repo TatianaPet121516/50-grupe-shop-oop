@@ -33,7 +33,7 @@ Design: ---
 - [ ] product CRUD:
   - [x] list
   - [x] add
-  - [ ] remove
+  - [x] remove
   - [ ] update
 
 ## 🧰 Getting Started
