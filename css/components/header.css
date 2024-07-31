@@ -2,23 +2,19 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
-
 .main-header .main-header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
 }
-
 .main-header .logo {
     height: 3rem;
 }
-
 .main-header .main-nav {
     display: flex;
     gap: 2rem;
 }
-
 .main-header .link {
     font-size: 1.2rem;
     text-decoration: none;
@@ -27,7 +23,12 @@
     border: none;
     cursor: pointer;
 }
-
 .main-header .link:hover {
     color: #36f;
+}
+.main-header .link.menu-btn {
+    padding: 0.2rem 0.5rem;
+    background-color: #36f;
+    color: #fff;
+    border-radius: 0.3rem;
 }

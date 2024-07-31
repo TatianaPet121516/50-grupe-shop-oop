@@ -1,5 +1,7 @@
 export class PageContact {
-    constructor() { }
+    constructor() {
+        console.log('PageContact...');
+     }
 
     render() {
         return `

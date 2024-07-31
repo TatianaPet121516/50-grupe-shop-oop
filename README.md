@@ -30,6 +30,11 @@ Design: ---
   - [ ] main content
   - [ ] footer
 - [ ] navigation between pages
+- [ ] product CRUD:
+  - [ ] list
+  - [ ] add
+  - [ ] remove
+  - [ ] update
 
 ## 🧰 Getting Started
 
